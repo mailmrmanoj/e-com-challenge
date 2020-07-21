@@ -37,7 +37,7 @@ public class ProductController {
     @PostMapping
     public ResponseEntity<?> addorUpdateProduct(@RequestBody ProductObj product) {
         productService.saveOrUpdateProduct(product);
-        return new ResponseEntity("Product added succcessfully", HttpStatus.OK);
+        return new ResponseEntity("Product added/updated succcessfully", HttpStatus.OK);
     }
 
     @DeleteMapping
