@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/expense")
+@RequestMapping("/product")
 public class ProductController {
 
     @Autowired
@@ -33,19 +33,9 @@ public class ProductController {
         return new ResponseEntity(result, HttpStatus.OK);
     }
 
-    @GetMapping("/{year}/{month}")
-    public ResponseEntity<?> getByMonthYear(@PathVariable("year") int year, @PathVariable("month") String month) {
-        List<ProductObj> result = new ArrayList<>();
-        if ("All".equals(month)) {
-            result = productService.findByYear(year);
-        } else {
-            result = productService.findByMonthAndYear(month, year);
-        }
-        return new ResponseEntity(result, HttpStatus.OK);
-    }
 
     @PostMapping
-    public ResponseEntity<?> addorUpdateExpense(@RequestBody ProductObj product) {
+    public ResponseEntity<?> addorUpdateProduct(@RequestBody ProductObj product) {
         productService.saveOrUpdateExpense(product);
         return new ResponseEntity("Product added succcessfully", HttpStatus.OK);
     }

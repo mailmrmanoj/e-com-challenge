@@ -7,9 +7,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface ProductRepository extends MongoRepository<ProductObj, String> {
 
-    List<ProductObj> findByMonthAndYear(String month, int year);
 
-    List<ProductObj> findByYear(int year);
 
 }
 
