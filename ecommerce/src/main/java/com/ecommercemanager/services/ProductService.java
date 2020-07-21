@@ -10,7 +10,7 @@ public interface ProductService {
 
     List<ProductObj> findAll();
 
-    void saveOrUpdateExpense(ProductObj product);
+    void saveOrUpdateProduct(ProductObj product);
 
     void deleteProduct(String id);
 
